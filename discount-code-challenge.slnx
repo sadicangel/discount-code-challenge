@@ -1,5 +1,15 @@
 <Solution>
-  <Project Path="src/DiscountsClient/DiscountsClient.csproj" />
-  <Project Path="src/DiscountsServer/DiscountsServer.csproj" />
-  <Project Path="tests/DiscountsServer.Tests/DiscountsServer.Tests.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="SpellingExclusions.dic" />
+  </Folder>
+  <Project Path="src/Discounts.Client/Discounts.Client.csproj" />
+  <Project Path="src/Discounts.Server/Discounts.Server.csproj" />
+  <Project Path="tests/Discounts.Tests/Discounts.Tests.csproj" />
 </Solution>
