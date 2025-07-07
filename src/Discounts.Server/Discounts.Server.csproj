@@ -1,1 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Discounts.Shared\Discounts.Shared.csproj" />
+  </ItemGroup>
+</Project>
