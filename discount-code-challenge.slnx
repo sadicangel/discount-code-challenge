@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/DiscountsClient/DiscountsClient.csproj" />
+  <Project Path="src/DiscountsServer/DiscountsServer.csproj" />
+  <Project Path="tests/DiscountsServer.Tests/DiscountsServer.Tests.csproj" />
+</Solution>
