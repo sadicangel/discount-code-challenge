@@ -7,6 +7,7 @@ package discounts;
 service DiscountProvider {
   rpc Generate (GenerateRequest) returns (GenerateReply);
   rpc UseCode (UseCodeRequest) returns (UseCodeReply);
+  rpc RandomCode (RandomCodeRequest) returns (RandomCodeReply);
 }
 
 message GenerateRequest {
@@ -23,5 +24,18 @@ message UseCodeRequest {
 }
 
 message UseCodeReply {
-  uint32 result = 1; 
+  UseCodeResult result = 1;
+}
+
+enum UseCodeResult {
+  Unknown = 0;
+  Redeemed = 1;
+  NotFound = 2;
+  AlreadyRedeemed = 3;
+}
+
+message RandomCodeRequest {}
+
+message RandomCodeReply {
+  optional string code = 1;
 }

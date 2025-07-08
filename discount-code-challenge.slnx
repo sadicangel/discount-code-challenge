@@ -10,7 +10,7 @@
     <File Path="SpellingExclusions.dic" />
   </Folder>
   <Project Path="src/Discounts.Client/Discounts.Client.csproj" />
-  <Project Path="src/Discounts.Server/Discounts.Server.csproj" />
+  <Project Path="src/Discounts.Server/Discounts.Server.csproj" Id="143aad26-14e7-4101-8f27-d07c4fa3db31" />
   <Project Path="src/Discounts.Shared/Discounts.Shared.csproj" Id="2c8c981e-6544-4a91-b92a-c63a719ea68d" />
   <Project Path="tests/Discounts.Tests/Discounts.Tests.csproj" />
 </Solution>
