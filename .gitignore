@@ -400,3 +400,6 @@ FodyWeavers.xsd
 # Verify
 *.received.*
 *.received/
+
+# SQLite
+*.db*

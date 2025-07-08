@@ -23,6 +23,7 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
 
             t.Property(u => u.Version)
                 .HasColumnName("version")
+                .HasConversion<string>()
                 .IsConcurrencyToken();
 
             t.ToTable("discount_codes");

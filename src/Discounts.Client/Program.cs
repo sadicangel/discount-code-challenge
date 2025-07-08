@@ -5,7 +5,6 @@ using Grpc.Net.Client;
 using var channel = GrpcChannel.ForAddress("https://localhost:7222");
 var client = new DiscountProvider.DiscountProviderClient(channel);
 
-
 var root = new RootCommand("Discounts client implementation")
 {
     CreateGenerateCommand(client),
@@ -89,6 +88,14 @@ static Command CreateUseCodeCommand(DiscountProvider.DiscountProviderClient clie
         var code = parseResult.GetValue(codeArgument);
 
         var reply = await client.UseCodeAsync(new UseCodeRequest { Code = code }, cancellationToken: cancellationToken);
+
+        Console.WriteLine(reply.Result switch
+        {
+            UseCodeResult.Redeemed => "Discount code redeemed!",
+            UseCodeResult.NotFound => "Invalid discount code: not found.",
+            UseCodeResult.AlreadyRedeemed => "Invalid discount code: already redeemed.",
+            _ => "Invalid discount code: unknown error.",
+        });
     });
 
     return command;
@@ -111,7 +118,7 @@ static Command CreateRandomCodeCommand(DiscountProvider.DiscountProviderClient c
 
         var reply = await client.RandomCodeAsync(new RandomCodeRequest(), cancellationToken: cancellationToken);
 
-        Console.WriteLine(string.IsNullOrWhiteSpace(reply.Code) ? "No codes have been generated" : $"Discount code: {reply.Code}");
+        Console.WriteLine(string.IsNullOrWhiteSpace(reply.Code) ? "No codes have been generated" : reply.Code);
     });
     return command;
 }

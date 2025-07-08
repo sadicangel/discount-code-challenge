@@ -25,7 +25,7 @@ public sealed class DiscountCodeGenerator(AppDbContext dbContext, ILogger<Discou
             {
                 var iterationCount = await dbContext.Database.ExecuteSqlRawAsync(
                     $"""
-                    INSERT INTO discount_codes (code, version) VALUES
+                    INSERT OR IGNORE INTO discount_codes (code, version) VALUES
                     {string.Join(s_commaNewLine, GenerateDiscountCodeRows(count - totalCount, length))};
                     """,
                     cancellationTokenSource.Token);
